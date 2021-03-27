@@ -1,0 +1,16 @@
+name: Greetings
+
+on: 
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Define a env'
+        requied: true
+        default: 'prod'
+        
+
+jobs:
+  greeting:
+    runs-on: ubuntu-latest
+    steps:
+    - run: echo "Selction is ${{ github.event.inputs.environment }}" 
